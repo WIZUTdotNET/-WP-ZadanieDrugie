@@ -7,5 +7,9 @@ using System.Threading.Tasks;
 namespace ZadanieDrugie.ViewModels {
     public class AnimalPicture {
         public string FileName { get; set; }
+
+        public AnimalPicture(string fileName) {
+            FileName = fileName;
+        }
     }
 }
