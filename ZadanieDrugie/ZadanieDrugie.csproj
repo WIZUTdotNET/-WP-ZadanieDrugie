@@ -104,6 +104,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AppResources.resx</DependentUpon>
     </Compile>
+    <Compile Include="ViewModels\AnimalData.cs" />
+    <Compile Include="ViewModels\AnimalGroup.cs" />
+    <Compile Include="ViewModels\AnimalPicture.cs" />
+    <Compile Include="ViewModels\AnimalViewModel.cs" />
     <Compile Include="ViewModels\ItemViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
   </ItemGroup>
@@ -120,6 +124,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </DesignData>
+    <Page Include="SampleData\AnimalSampleData.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
@@ -134,6 +142,24 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\AlignmentGrid.png" />
+    <Content Include="Assets\Animals\Air\Eagle\Eagle1.jpg" />
+    <Content Include="Assets\Animals\Air\Eagle\Eagle2.jpg" />
+    <Content Include="Assets\Animals\Air\Eagle\Eagle3.jpg" />
+    <Content Include="Assets\Animals\Air\Hummingbird\Hummingbird1.jpg" />
+    <Content Include="Assets\Animals\Air\Hummingbird\Hummingbird2.jpg" />
+    <Content Include="Assets\Animals\Air\Hummingbird\Hummingbird3.jpg" />
+    <Content Include="Assets\Animals\Land\Elephant\Elephant1.jpg" />
+    <Content Include="Assets\Animals\Land\Lion\Lion1.jpg" />
+    <Content Include="Assets\Animals\Land\Lion\Lion2.jpg" />
+    <Content Include="Assets\Animals\Land\Lion\Lion3.jpg" />
+    <Content Include="Assets\Animals\Water\KillerWhale\KillerWhale1.jpg" />
+    <Content Include="Assets\Animals\Water\KillerWhale\KillerWhale2.jpg" />
+    <Content Include="Assets\Animals\Water\Shark\Shark1.jpg" />
+    <Content Include="Assets\Animals\Water\Shark\Shark2.jpg" />
+    <Content Include="Assets\Animals\Water\Shark\Shark3.jpg" />
+    <Content Include="Assets\Animals\Water\Whale\Whale1.jpg" />
+    <Content Include="Assets\Animals\Water\Whale\Whale2.jpg" />
+    <Content Include="Assets\Animals\Water\Whale\Whale3.jpg" />
     <Content Include="Assets\ApplicationIcon.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
