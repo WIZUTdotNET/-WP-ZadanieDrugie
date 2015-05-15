@@ -18,14 +18,14 @@
     <phone:PhoneApplicationPage.Resources>
         <DataTemplate x:Name="PivotTemplate">
 
-            <Grid Height="150">
+            <Grid Height="150" Margin="0 0 12 0">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="4*" />
                     <ColumnDefinition Width="2*" />
                 </Grid.ColumnDefinitions>
-                <StackPanel Margin="0,0,5,17" Grid.Column="0">
-                    <ScrollViewer HorizontalScrollBarVisibility="Hidden">
-                        <TextBlock Text="{Binding Name}"  TextWrapping="NoWrap" Margin="12,0,0,0" Style="{StaticResource PhoneTextExtraLargeStyle}"/>
+                <StackPanel Margin="0,0,15,17" Grid.Column="0">
+                    <ScrollViewer HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Disabled">
+                        <TextBlock Text="{Binding Name}" TextWrapping="NoWrap" Margin="12,0,0,0" Style="{StaticResource PhoneTextExtraLargeStyle}"/>
                     </ScrollViewer>
                     <ScrollViewer HorizontalScrollBarVisibility="Disabled" Height="90">
                         <TextBlock TextWrapping="Wrap" Margin="12,-6,0,0" Style="{StaticResource PhoneTextSubtleStyle}">
@@ -38,7 +38,7 @@
                 <phone:LongListSelector Grid.Column="1" Height="100" ItemsSource="{Binding Pictures}">
                     <phone:LongListSelector.ItemTemplate>
                         <DataTemplate>
-                            <Image Source="{Binding FileName}"></Image>
+                            <Image Source="{Binding FileName}"/>
                         </DataTemplate>
                     </phone:LongListSelector.ItemTemplate>
                 </phone:LongListSelector>
