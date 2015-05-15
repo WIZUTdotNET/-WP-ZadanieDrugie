@@ -149,6 +149,8 @@
     <Content Include="Assets\Animals\Air\Hummingbird\Hummingbird2.jpg" />
     <Content Include="Assets\Animals\Air\Hummingbird\Hummingbird3.jpg" />
     <Content Include="Assets\Animals\Land\Elephant\Elephant1.jpg" />
+    <Content Include="Assets\Animals\Land\Elephant\Elephant2.jpg" />
+    <Content Include="Assets\Animals\Land\Elephant\Elephant3.jpg" />
     <Content Include="Assets\Animals\Land\Lion\Lion1.jpg" />
     <Content Include="Assets\Animals\Land\Lion\Lion2.jpg" />
     <Content Include="Assets\Animals\Land\Lion\Lion3.jpg" />

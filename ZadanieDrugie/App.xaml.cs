@@ -9,23 +9,21 @@ using Microsoft.Phone.Shell;
 using ZadanieDrugie.Resources;
 using ZadanieDrugie.ViewModels;
 
-namespace ZadanieDrugie
-{
-    public partial class App : Application
-    {
-        private static MainViewModel viewModel = null;
+namespace ZadanieDrugie {
+    public partial class App : Application {
+        private static AnimalViewModel viewModel = null;
 
         /// <summary>
         /// A static ViewModel used by the views to bind against.
         /// </summary>
         /// <returns>The MainViewModel object.</returns>
-        public static MainViewModel ViewModel
-        {
-            get
-            {
+        public static AnimalViewModel ViewModel {
+            get {
                 // Delay creation of the view model until necessary
-                if (viewModel == null)
-                    viewModel = new MainViewModel();
+                if (viewModel == null) {
+                    viewModel = new AnimalViewModel();
+                    viewModel.LoadData();
+                }
 
                 return viewModel;
             }
@@ -40,8 +38,7 @@ namespace ZadanieDrugie
         /// <summary>
         /// Constructor for the Application object.
         /// </summary>
-        public App()
-        {
+        public App() {
             // Global handler for uncaught exceptions.
             UnhandledException += Application_UnhandledException;
 
@@ -55,8 +52,7 @@ namespace ZadanieDrugie
             InitializeLanguage();
 
             // Show graphics profiling information while debugging.
-            if (Debugger.IsAttached)
-            {
+            if (Debugger.IsAttached) {
                 // Display the current frame rate counters
                 Application.Current.Host.Settings.EnableFrameRateCounter = true;
 
@@ -77,55 +73,45 @@ namespace ZadanieDrugie
 
         // Code to execute when a contract activation such as a file open or save picker returns 
         // with the picked file or other return values
-        private void Application_ContractActivated(object sender, Windows.ApplicationModel.Activation.IActivatedEventArgs e)
-        {
+        private void Application_ContractActivated(object sender, Windows.ApplicationModel.Activation.IActivatedEventArgs e) {
         }
 
         // Code to execute when the application is launching (eg, from Start)
         // This code will not execute when the application is reactivated
-        private void Application_Launching(object sender, LaunchingEventArgs e)
-        {
+        private void Application_Launching(object sender, LaunchingEventArgs e) {
         }
 
         // Code to execute when the application is activated (brought to foreground)
         // This code will not execute when the application is first launched
-        private void Application_Activated(object sender, ActivatedEventArgs e)
-        {
+        private void Application_Activated(object sender, ActivatedEventArgs e) {
             // Ensure that application state is restored appropriately
-            if (!App.ViewModel.IsDataLoaded)
-            {
+            if (!App.ViewModel.IsDataLoaded) {
                 App.ViewModel.LoadData();
             }
         }
 
         // Code to execute when the application is deactivated (sent to background)
         // This code will not execute when the application is closing
-        private void Application_Deactivated(object sender, DeactivatedEventArgs e)
-        {
+        private void Application_Deactivated(object sender, DeactivatedEventArgs e) {
         }
 
         // Code to execute when the application is closing (eg, user hit Back)
         // This code will not execute when the application is deactivated
-        private void Application_Closing(object sender, ClosingEventArgs e)
-        {
+        private void Application_Closing(object sender, ClosingEventArgs e) {
             // Ensure that required application state is persisted here.
         }
 
         // Code to execute if a navigation fails
-        private void RootFrame_NavigationFailed(object sender, NavigationFailedEventArgs e)
-        {
-            if (Debugger.IsAttached)
-            {
+        private void RootFrame_NavigationFailed(object sender, NavigationFailedEventArgs e) {
+            if (Debugger.IsAttached) {
                 // A navigation has failed; break into the debugger
                 Debugger.Break();
             }
         }
 
         // Code to execute on Unhandled Exceptions
-        private void Application_UnhandledException(object sender, ApplicationUnhandledExceptionEventArgs e)
-        {
-            if (Debugger.IsAttached)
-            {
+        private void Application_UnhandledException(object sender, ApplicationUnhandledExceptionEventArgs e) {
+            if (Debugger.IsAttached) {
                 // An unhandled exception has occurred; break into the debugger
                 Debugger.Break();
             }
@@ -137,8 +123,7 @@ namespace ZadanieDrugie
         private bool phoneApplicationInitialized = false;
 
         // Do not add any additional code to this method
-        private void InitializePhoneApplication()
-        {
+        private void InitializePhoneApplication() {
             if (phoneApplicationInitialized)
                 return;
 
@@ -161,8 +146,7 @@ namespace ZadanieDrugie
         }
 
         // Do not add any additional code to this method
-        private void CompleteInitializePhoneApplication(object sender, NavigationEventArgs e)
-        {
+        private void CompleteInitializePhoneApplication(object sender, NavigationEventArgs e) {
             // Set the root visual to allow the application to render
             if (RootVisual != RootFrame)
                 RootVisual = RootFrame;
@@ -171,16 +155,14 @@ namespace ZadanieDrugie
             RootFrame.Navigated -= CompleteInitializePhoneApplication;
         }
 
-        private void CheckForResetNavigation(object sender, NavigationEventArgs e)
-        {
+        private void CheckForResetNavigation(object sender, NavigationEventArgs e) {
             // If the app has received a 'reset' navigation, then we need to check
             // on the next navigation to see if the page stack should be reset
             if (e.NavigationMode == NavigationMode.Reset)
                 RootFrame.Navigated += ClearBackStackAfterReset;
         }
 
-        private void ClearBackStackAfterReset(object sender, NavigationEventArgs e)
-        {
+        private void ClearBackStackAfterReset(object sender, NavigationEventArgs e) {
             // Unregister the event so it doesn't get called again
             RootFrame.Navigated -= ClearBackStackAfterReset;
 
@@ -189,8 +171,7 @@ namespace ZadanieDrugie
                 return;
 
             // For UI consistency, clear the entire page stack
-            while (RootFrame.RemoveBackEntry() != null)
-            {
+            while (RootFrame.RemoveBackEntry() != null) {
                 ; // do nothing
             }
         }
@@ -214,10 +195,8 @@ namespace ZadanieDrugie
         //
         // For more info on localizing Windows Phone apps see http://go.microsoft.com/fwlink/?LinkId=262072.
         //
-        private void InitializeLanguage()
-        {
-            try
-            {
+        private void InitializeLanguage() {
+            try {
                 // Set the font to match the display language defined by the
                 // ResourceLanguage resource string for each supported language.
                 //
@@ -237,15 +216,13 @@ namespace ZadanieDrugie
                 FlowDirection flow = (FlowDirection)Enum.Parse(typeof(FlowDirection), AppResources.ResourceFlowDirection);
                 RootFrame.FlowDirection = flow;
             }
-            catch
-            {
+            catch {
                 // If an exception is caught here it is most likely due to either
                 // ResourceLangauge not being correctly set to a supported language
                 // code or ResourceFlowDirection is set to a value other than LeftToRight
                 // or RightToLeft.
 
-                if (Debugger.IsAttached)
-                {
+                if (Debugger.IsAttached) {
                     Debugger.Break();
                 }
 

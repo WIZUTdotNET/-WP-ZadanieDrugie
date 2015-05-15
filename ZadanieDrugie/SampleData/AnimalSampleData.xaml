@@ -1,0 +1,84 @@
+﻿<vm:AnimalViewModel
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:vm="clr-namespace:ZadanieDrugie.ViewModels">
+
+    <vm:AnimalViewModel.WaterAnimals>
+        <vm:AnimalGroup GroupName="Water">
+            <vm:AnimalGroup.Animals>
+                <vm:AnimalData 
+                    Name="Whale" LifeSpan="Lifespan: 90 years" Size="Length: 30 metres" Weight="Weight: 190 tonnes">
+                    <vm:AnimalData.Pictures>
+                        <vm:AnimalPicture FileName="Assets/Animals/Water/Whale/Whale1.jpg"/>
+                        <vm:AnimalPicture FileName="Assets/Animals/Water/Whale/Whale2.jpg"/>
+                        <vm:AnimalPicture FileName="Assets/Animals/Water/Whale/Whale3.jpg"/>
+                    </vm:AnimalData.Pictures>
+                </vm:AnimalData>
+
+                <vm:AnimalData 
+                    Name="Shark" LifeSpan="Average lifetime: 25 years" Size="Max length: 20 metres" Weight="Weight up to 12 tonnes">
+                    <vm:AnimalData.Pictures>
+                        <vm:AnimalPicture FileName="Assets/Animals/Water/Shark/Shark1.jpg"></vm:AnimalPicture>
+                        <vm:AnimalPicture FileName="Assets/Animals/Water/Shark/Shark2.jpg"></vm:AnimalPicture>
+                        <vm:AnimalPicture FileName="Assets/Animals/Water/Shark/Shark3.jpg"></vm:AnimalPicture>
+                    </vm:AnimalData.Pictures>
+                </vm:AnimalData>
+
+            </vm:AnimalGroup.Animals>
+        </vm:AnimalGroup>
+
+
+    </vm:AnimalViewModel.WaterAnimals>
+
+    <vm:AnimalViewModel.LandAnimals>
+        <vm:AnimalGroup GroupName="Land">
+            <vm:AnimalGroup.Animals>
+                <vm:AnimalData 
+                    Name="Lion" LifeSpan="Male lifetime: ca. 10 y" Size="Total length: 350 cm" Weight="Male weight: 150–250 kg">
+                    <vm:AnimalData.Pictures>
+                        <vm:AnimalPicture FileName="Assets/Animals/Land/Lion/Lion1.jpg"/>
+                        <vm:AnimalPicture FileName="Assets/Animals/Land/Lion/Lion2.jpg"/>
+                        <vm:AnimalPicture FileName="Assets/Animals/Land/Lion/Lion3.jpg"/>
+                    </vm:AnimalData.Pictures>
+                </vm:AnimalData>
+
+                <vm:AnimalData 
+                    Name="Elephant" LifeSpan="Lifespan: 60-70 y" Size="Height: 4 metres" Weight="Weight: 7 tonnes">
+                    <vm:AnimalData.Pictures>
+                        <vm:AnimalPicture FileName="Assets/Animals/Water/Elephant/Elephant1.jpg"></vm:AnimalPicture>
+                        <vm:AnimalPicture FileName="Assets/Animals/Water/Elephant/Elephant2.jpg"></vm:AnimalPicture>
+                        <vm:AnimalPicture FileName="Assets/Animals/Water/Elephant/Elephant3.jpg"></vm:AnimalPicture>
+                    </vm:AnimalData.Pictures>
+                </vm:AnimalData>
+
+            </vm:AnimalGroup.Animals>
+        </vm:AnimalGroup>
+    </vm:AnimalViewModel.LandAnimals>
+
+    <vm:AnimalViewModel.AirAnimals>
+        <vm:AnimalGroup GroupName="Air">
+            <vm:AnimalGroup.Animals>
+                <vm:AnimalData 
+                    Name="Eagle" LifeSpan="Average lifespan: 20 y" Size="Typical wingspan: 1.8 - 2.3 metres" Weight="Weight: 3 - 6.3 kg">
+                    <vm:AnimalData.Pictures>
+                        <vm:AnimalPicture FileName="Assets/Animals/Air/Eagle/Eagle1.jpg"/>
+                        <vm:AnimalPicture FileName="Assets/Animals/Air/Eagle/Eagle2.jpg"/>
+                        <vm:AnimalPicture FileName="Assets/Animals/Air/Eagle/Eagle3.jpg"/>
+                    </vm:AnimalData.Pictures>
+                </vm:AnimalData>
+
+                <vm:AnimalData 
+                    Name="Hummingbird" LifeSpan="Average lifespan: 3 - 5 y" Size="Size: 6 - 22 cm" Weight="Weight: 2 - 20 g">
+                    <vm:AnimalData.Pictures>
+                        <vm:AnimalPicture FileName="Assets/Animals/Air/Hummingbird/Hummingbird1.jpg"></vm:AnimalPicture>
+                        <vm:AnimalPicture FileName="Assets/Animals/Air/Hummingbird/Hummingbird2.jpg"></vm:AnimalPicture>
+                        <vm:AnimalPicture FileName="Assets/Animals/Air/Hummingbird/Hummingbird3.jpg"></vm:AnimalPicture>
+                    </vm:AnimalData.Pictures>
+                </vm:AnimalData>
+
+
+            </vm:AnimalGroup.Animals>
+        </vm:AnimalGroup>
+    </vm:AnimalViewModel.AirAnimals>
+    
+</vm:AnimalViewModel>
