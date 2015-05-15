@@ -64,7 +64,6 @@ namespace ZadanieDrugie.ViewModels {
             return data;
         }
 
-
         private AnimalGroup LoadAirAnimals() {
             AnimalGroup data = new AnimalGroup();
             data.GroupName = "Air";

@@ -54,40 +54,32 @@
         <!-- Text="{Binding Path=LocalizedResources.ApplicationTitle, Source={StaticResource LocalizedStrings}}" -->
 
         <!--Pivot Control-->
-        <phone:Pivot Title="MY APPLICATION">
+        <phone:Pivot Title="{Binding LocalizedResources.ApplicationTitle, Source={StaticResource LocalizedStrings}}">
             <!--Pivot item one-->
             <phone:PivotItem Header="{Binding LandAnimals.GroupName}">
-                <!--Double line list with text wrapping-->
-                <phone:LongListSelector Margin="0,0,-12,0" 
-                                        ItemsSource="{Binding LandAnimals.Animals}"
-                                        ItemTemplate="{StaticResource PivotTemplate}">
-                </phone:LongListSelector>
+                <phone:LongListSelector 
+                    Margin="0,0,-12,0"               
+                    ItemsSource="{Binding LandAnimals.Animals}"
+                    ItemTemplate="{StaticResource PivotTemplate}"/>
             </phone:PivotItem>
 
             <!--Pivot item two-->
             <phone:PivotItem Header="{Binding WaterAnimals.GroupName}">
-                <phone:LongListSelector Margin="0,0,-12,0" 
-                                        ItemsSource="{Binding WaterAnimals.Animals}"
-                                        ItemTemplate="{StaticResource PivotTemplate}">
-                </phone:LongListSelector>
+                <phone:LongListSelector 
+                    Margin="0,0,-12,0"         
+                    ItemsSource="{Binding WaterAnimals.Animals}"        
+                    ItemTemplate="{StaticResource PivotTemplate}"/>
             </phone:PivotItem>
 
-        
-        <!--Pivot item two-->
+        <!--Pivot item three-->
             <phone:PivotItem Header="{Binding AirAnimals.GroupName}">
-                <phone:LongListSelector Margin="0,0,-12,0" 
-                                        ItemsSource="{Binding AirAnimals.Animals}"
-                                        ItemTemplate="{StaticResource PivotTemplate}">
-                </phone:LongListSelector>
+                <phone:LongListSelector
+                    Margin="0,0,-12,0" 
+                    ItemsSource="{Binding AirAnimals.Animals}"
+                    ItemTemplate="{StaticResource PivotTemplate}"/>
             </phone:PivotItem>
         </phone:Pivot>
 
-        <!--Uncomment to see an alignment grid to help ensure your controls are
-            aligned on common boundaries.  The image has a top margin of -32px to
-            account for the System Tray. Set this to 0 (or remove the margin altogether)
-            if the System Tray is hidden.
-
-            Before shipping remove this XAML and the image itself.-->
         <!--<Image Source="/Assets/AlignmentGrid.png" VerticalAlignment="Top" Height="800" Width="480" Margin="0,-32,0,0" Grid.Row="0" IsHitTestVisible="False" />-->
     </Grid>
 

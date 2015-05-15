@@ -45,9 +45,9 @@
                 <vm:AnimalData 
                     Name="Elephant" LifeSpan="Lifespan: 60-70 y" Size="Height: 4 metres" Weight="Weight: 7 tonnes">
                     <vm:AnimalData.Pictures>
-                        <vm:AnimalPicture FileName="Assets/Animals/Water/Elephant/Elephant1.jpg"></vm:AnimalPicture>
-                        <vm:AnimalPicture FileName="Assets/Animals/Water/Elephant/Elephant2.jpg"></vm:AnimalPicture>
-                        <vm:AnimalPicture FileName="Assets/Animals/Water/Elephant/Elephant3.jpg"></vm:AnimalPicture>
+                        <vm:AnimalPicture FileName="Assets/Animals/Land/Elephant/Elephant1.jpg"></vm:AnimalPicture>
+                        <vm:AnimalPicture FileName="Assets/Animals/Land/Elephant/Elephant2.jpg"></vm:AnimalPicture>
+                        <vm:AnimalPicture FileName="Assets/Animals/Land/Elephant/Elephant3.jpg"></vm:AnimalPicture>
                     </vm:AnimalData.Pictures>
                 </vm:AnimalData>
 
