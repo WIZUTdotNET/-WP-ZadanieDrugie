@@ -58,25 +58,31 @@
             <!--Pivot item one-->
             <phone:PivotItem Header="{Binding LandAnimals.GroupName}">
                 <phone:LongListSelector 
+                    Tag="{Binding LandAnimals.GroupName}"
                     Margin="0,0,-12,0"               
                     ItemsSource="{Binding LandAnimals.Animals}"
-                    ItemTemplate="{StaticResource PivotTemplate}"/>
+                    ItemTemplate="{StaticResource PivotTemplate}"
+                    SelectionChanged="LongListSelector_OnSelectionChanged"/>
             </phone:PivotItem>
 
             <!--Pivot item two-->
             <phone:PivotItem Header="{Binding WaterAnimals.GroupName}">
                 <phone:LongListSelector 
+                    Tag="Water"
                     Margin="0,0,-12,0"         
                     ItemsSource="{Binding WaterAnimals.Animals}"        
-                    ItemTemplate="{StaticResource PivotTemplate}"/>
+                    ItemTemplate="{StaticResource PivotTemplate}"
+                    SelectionChanged="LongListSelector_OnSelectionChanged"/>
             </phone:PivotItem>
 
         <!--Pivot item three-->
             <phone:PivotItem Header="{Binding AirAnimals.GroupName}">
                 <phone:LongListSelector
+                    Tag="Air"
                     Margin="0,0,-12,0" 
                     ItemsSource="{Binding AirAnimals.Animals}"
-                    ItemTemplate="{StaticResource PivotTemplate}"/>
+                    ItemTemplate="{StaticResource PivotTemplate}"
+                    SelectionChanged="LongListSelector_OnSelectionChanged"/>
             </phone:PivotItem>
         </phone:Pivot>
 

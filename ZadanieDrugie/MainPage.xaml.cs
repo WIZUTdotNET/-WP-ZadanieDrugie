@@ -8,6 +8,7 @@ using System.Windows.Navigation;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using ZadanieDrugie.Resources;
+using ZadanieDrugie.ViewModels;
 
 namespace ZadanieDrugie
 {
@@ -49,5 +50,20 @@ namespace ZadanieDrugie
         //    ApplicationBarMenuItem appBarMenuItem = new ApplicationBarMenuItem(AppResources.AppBarMenuItemText);
         //    ApplicationBar.MenuItems.Add(appBarMenuItem);
         //}
+        private void LongListSelector_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            LongListSelector selector = (LongListSelector) sender;
+            if (selector == null) return;
+            string animalGroup = selector.Tag.ToString();
+
+            AnimalData animal = (AnimalData) selector.SelectedItem;
+            if (animal == null) return;
+            
+
+            NavigationService.Navigate(new Uri("/DetailsPage.xaml?selectedAnimal=" + animal.Name+"&animalGroup="+animalGroup,
+                UriKind.RelativeOrAbsolute));
+
+            selector.SelectedItem = null;
+        }
     }
 }

@@ -57,7 +57,7 @@ namespace ZadanieDrugie.ViewModels {
                 Pictures = new List<AnimalPicture> {
                         new AnimalPicture{FileName = basePath + data.GroupName + "/KillerWhale/KillerWhale1.jpg"},
                         new AnimalPicture{FileName = basePath + data.GroupName + "/KillerWhale/KillerWhale2.jpg"},
-                        new AnimalPicture{FileName = basePath + data.GroupName + "/KillerWhale/KillerWhale3.jpg"}
+                        new AnimalPicture{FileName = basePath + data.GroupName + "/KillerWhale/KillerWhale2.jpg"}
                     }
             });
 

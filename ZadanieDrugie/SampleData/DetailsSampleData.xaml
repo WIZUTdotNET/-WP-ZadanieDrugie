@@ -1,0 +1,17 @@
+﻿<vm:AnimalData
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:vm="clr-namespace:ZadanieDrugie.ViewModels">
+
+    <!--<vm:AnimalData.Name>Whale</vm:AnimalData.Name>-->
+    <vm:AnimalData.LifeSpan>90 years</vm:AnimalData.LifeSpan>
+    <vm:AnimalData.Weight>Weight: 190 tonnes</vm:AnimalData.Weight>
+    <vm:AnimalData.Size>Length: 30 metres</vm:AnimalData.Size>
+    <vm:AnimalData.Pictures>
+        <vm:AnimalPicture FileName="Assets/Animals/Water/Whale/Whale1.jpg" />
+        <vm:AnimalPicture FileName="Assets/Animals/Water/Whale/Whale2.jpg"/>
+        <vm:AnimalPicture FileName="Assets/Animals/Water/Whale/Whale3.jpg"/>
+    </vm:AnimalData.Pictures>
+
+    
+</vm:AnimalData>
