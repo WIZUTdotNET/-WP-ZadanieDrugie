@@ -54,13 +54,11 @@ namespace ZadanieDrugie
         {
             LongListSelector selector = (LongListSelector) sender;
             if (selector == null) return;
-            string animalGroup = selector.Tag.ToString();
-
+ 
             AnimalData animal = (AnimalData) selector.SelectedItem;
             if (animal == null) return;
             
-
-            NavigationService.Navigate(new Uri("/DetailsPage.xaml?selectedAnimal=" + animal.Name+"&animalGroup="+animalGroup,
+            NavigationService.Navigate(new Uri("/DetailsPage.xaml?selectedAnimal=" + animal.Name,
                 UriKind.RelativeOrAbsolute));
 
             selector.SelectedItem = null;

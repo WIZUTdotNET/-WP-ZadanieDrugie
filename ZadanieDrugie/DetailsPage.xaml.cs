@@ -18,25 +18,12 @@ namespace ZadanieDrugie {
         protected override void OnNavigatedTo(NavigationEventArgs e) {
             if (DataContext == null) {
                 string selectedAnimal = "";
-                string animalGroup = "";
-                if (NavigationContext.QueryString.TryGetValue("selectedAnimal", out selectedAnimal) && NavigationContext.QueryString.TryGetValue("animalGroup", out animalGroup))
-                {
-                    if (App.ViewModel != null)
-                    {
-                        switch (animalGroup)
-                        {
-                            case "Land":
-                                DataContext = App.ViewModel.LandAnimals.Animals.FirstOrDefault(p => selectedAnimal != null && p.Name == selectedAnimal);
-                                break;
-                            case "Water":
-                                DataContext = App.ViewModel.WaterAnimals.Animals.FirstOrDefault(p => selectedAnimal != null && p.Name == selectedAnimal);
-                                break;
-                            case "Air":
-                                DataContext = App.ViewModel.AirAnimals.Animals.FirstOrDefault(p => selectedAnimal != null && p.Name == selectedAnimal);
-                                break;
-                            default:
-                                break;
-                        }
+                if (NavigationContext.QueryString.TryGetValue("selectedAnimal", out selectedAnimal)) {
+                    if (App.ViewModel != null) {
+                        DataContext =
+                            App.ViewModel.LandAnimals.Animals.Concat(App.ViewModel.AirAnimals.Animals)
+                                .Concat(App.ViewModel.WaterAnimals.Animals)
+                                .FirstOrDefault(p => selectedAnimal != null && p.Name == selectedAnimal);
                     }
                 }
             }
